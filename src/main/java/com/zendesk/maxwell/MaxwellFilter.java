@@ -128,13 +128,13 @@ public class MaxwellFilter {
 	}
 
 	public boolean isDatabaseBlacklisted(String databaseName) {
-		return ! filterListsInclude(emptyList, blacklistDatabases, databaseName);
+		return ! filterListsInclude(includeDatabases, blacklistDatabases, databaseName);
 	}
 
 	public boolean isTableBlacklisted(String databaseName, String tableName) {
 		return isSystemBlacklisted(databaseName, tableName)
 			   || isDatabaseBlacklisted(databaseName)
-			   || !filterListsInclude(emptyList, blacklistTables, tableName);
+			   || !filterListsInclude(includeTables, blacklistTables, tableName);
 	}
 
 	public static boolean isSystemBlacklisted(String databaseName, String tableName) {

@@ -286,9 +286,10 @@ public class MaxwellContext {
 	}
 
 	public boolean shouldHeartbeat() throws SQLException {
-		fetchMysqlVersion();
+		//fetchMysqlVersion();
 		// 5.5 and above
-		return (mysqlMajorVersion >= 6) || (mysqlMajorVersion == 5 && mysqlMinorVersion >= 5);
+		//return (mysqlMajorVersion >= 6) || (mysqlMajorVersion == 5 && mysqlMinorVersion >= 5);
+		return false;
 	}
 
 	public CaseSensitivity getCaseSensitivity() throws SQLException {
